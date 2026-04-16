@@ -4,7 +4,7 @@
       
       <!-- Logo -->
       <h1 class="text-2xl font-bold text-indigo-600 dark:text-indigo-400 whitespace-nowrap">
-        🛒 ShopVue
+        🛒 Shopyfy
       </h1>
 
       <!-- Search Bar -->
