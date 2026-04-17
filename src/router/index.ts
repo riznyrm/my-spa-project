@@ -8,6 +8,7 @@ const router = createRouter({
     { path: '/product/:id', name: 'product', component: () => import('../views/ProductView.vue') },
     { path: '/login', name: 'login', component: () => import('../views/LoginView.vue') },
     { path: '/cart', name: 'cart', component: () => import('../views/CartView.vue'), meta: { requiresAuth: true } }
+    { path: '/:pathMatch(.*)*', name: 'notfound', component: () => import('../views/NotFoundView.vue') }
   ]
 })
 
