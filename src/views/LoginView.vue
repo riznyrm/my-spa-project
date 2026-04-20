@@ -4,7 +4,7 @@
 
       
       <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">🛒 ShopVue</h1>
+        <h1 class="text-4xl font-bold text-indigo-600 dark:text-indigo-400">🛒 Shopyfy</h1>
         <p class="text-gray-500 dark:text-gray-400 mt-2">Sign in to your account</p>
       </div>
 

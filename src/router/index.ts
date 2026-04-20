@@ -4,14 +4,34 @@ import HomeView from '../views/HomeView.vue'
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/', name: 'home', component: HomeView },
-    { path: '/product/:id', name: 'product', component: () => import('../views/ProductView.vue') },
-    { path: '/login', name: 'login', component: () => import('../views/LoginView.vue') },
-    { path: '/cart', name: 'cart', component: () => import('../views/CartView.vue'), meta: { requiresAuth: true } }
-    { path: '/:pathMatch(.*)*', name: 'notfound', component: () => import('../views/NotFoundView.vue') }
+    {
+      path: '/',
+      name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/product/:id',
+      name: 'product',
+      component: () => import('../views/ProductView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('../views/CartView.vue'),
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/404',
+      name: 'notfound',
+      component: () => import('../views/NotFoundView.vue')
+    }
   ]
 })
-
 
 router.beforeEach((to) => {
   const user = localStorage.getItem('user')

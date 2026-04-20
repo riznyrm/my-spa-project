@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import type { Product } from '../types'
 
 export interface CartItem {
@@ -8,7 +8,10 @@ export interface CartItem {
 }
 
 export const useCartStore = defineStore('cart', () => {
-  const items = ref<CartItem[]>([])
+  
+  const items = ref<CartItem[]>(
+    JSON.parse(localStorage.getItem('cart') || '[]')
+  )
 
   const totalItems = computed(() =>
     items.value.reduce((sum, item) => sum + item.quantity, 0)
@@ -17,6 +20,11 @@ export const useCartStore = defineStore('cart', () => {
   const totalPrice = computed(() =>
     items.value.reduce((sum, item) => sum + item.product.price * item.quantity, 0)
   )
+
+  
+  watch(items, (newItems) => {
+    localStorage.setItem('cart', JSON.stringify(newItems))
+  }, { deep: true })
 
   const addToCart = (product: Product) => {
     const existing = items.value.find(i => i.product.id === product.id)
@@ -49,6 +57,7 @@ export const useCartStore = defineStore('cart', () => {
 
   const clearCart = () => {
     items.value = []
+    localStorage.removeItem('cart')
   }
 
   return {
