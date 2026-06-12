@@ -88,3 +88,33 @@ const handleFilter = (category: string) => {
 
 onMounted(() => fetchProducts())
 </script>
+
+<style scoped>
+
+.grid > * {
+  animation: fadeUp 0.4s ease both;
+}
+.grid > *:nth-child(1)  { animation-delay: 0.05s; }
+.grid > *:nth-child(2)  { animation-delay: 0.10s; }
+.grid > *:nth-child(3)  { animation-delay: 0.15s; }
+.grid > *:nth-child(4)  { animation-delay: 0.20s; }
+.grid > *:nth-child(5)  { animation-delay: 0.25s; }
+.grid > *:nth-child(6)  { animation-delay: 0.30s; }
+.grid > *:nth-child(7)  { animation-delay: 0.35s; }
+.grid > *:nth-child(8)  { animation-delay: 0.40s; }
+.grid > *:nth-child(9)  { animation-delay: 0.45s; }
+.grid > *:nth-child(10) { animation-delay: 0.50s; }
+.grid > *:nth-child(11) { animation-delay: 0.55s; }
+.grid > *:nth-child(12) { animation-delay: 0.60s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>

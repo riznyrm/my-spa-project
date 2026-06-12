@@ -104,3 +104,26 @@ import NavBar from '../components/NavBar.vue'
 
 const cartStore = useCartStore()
 </script>
+
+<style scoped>
+.flex-col > div {
+  animation: slideIn 0.3s ease both;
+}
+
+.flex-col > div:nth-child(1) { animation-delay: 0.05s; }
+.flex-col > div:nth-child(2) { animation-delay: 0.10s; }
+.flex-col > div:nth-child(3) { animation-delay: 0.15s; }
+.flex-col > div:nth-child(4) { animation-delay: 0.20s; }
+.flex-col > div:nth-child(5) { animation-delay: 0.25s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+</style>

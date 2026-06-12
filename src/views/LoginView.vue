@@ -121,3 +121,20 @@ const fillDemo = () => {
   password.value = 'emilyspass'
 }
 </script>
+
+<style scoped>
+.bg-white {
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+</style>

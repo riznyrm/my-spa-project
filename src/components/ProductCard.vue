@@ -1,9 +1,11 @@
 <template>
   <div
     @click="$router.push(`/product/${product.id}`)"
-    class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-xl transition-all duration-300 cursor-pointer group overflow-hidden"
+    class="bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-2xl 
+           transition-all duration-300 cursor-pointer group overflow-hidden
+           hover:-translate-y-2 hover:scale-[1.02] active:scale-95"
   >
-    <!-- Image -->
+    
     <div class="overflow-hidden rounded-t-2xl">
       <img
         :src="product.thumbnail"
@@ -12,7 +14,7 @@
       />
     </div>
 
-    <!-- Content -->
+    
     <div class="p-4">
 
       <!-- Category Badge -->
@@ -20,18 +22,18 @@
         {{ product.category }}
       </span>
 
-      <!-- Title -->
+    
       <h2 class="mt-2 font-semibold text-gray-800 dark:text-white text-sm line-clamp-2">
         {{ product.title }}
       </h2>
 
-      <!-- Rating -->
+      
       <div class="flex items-center gap-1 mt-1">
         <span class="text-yellow-400">⭐</span>
         <span class="text-sm text-gray-500 dark:text-gray-400">{{ product.rating }}</span>
       </div>
 
-      <!-- Price + Cart Button -->
+      
       <div class="flex items-center justify-between mt-3">
         <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400">
           ${{ product.price }}
